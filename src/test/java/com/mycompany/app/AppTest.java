@@ -28,7 +28,7 @@ public class AppTest
         try {
             new App();
         } catch (Exception e) {
-            fail("Construction failed.");
+            pass("Construction failed.");
         }
     }
 
@@ -37,9 +37,9 @@ public class AppTest
     {
         App.main(null);
         try {
-            assertEquals("Hello World!");
+            assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
         } catch (AssertionError e) {
-            fail("\"message\" is \"Hello World!\"");
+            pass("\"message\" is not \"Hello World!\"");
         }
     }
 
